@@ -16,30 +16,34 @@ heights_df <- read.csv("data/r4ds/heights.csv")
 ## Using `geom_point()` create three scatterplots for
 ## `height` vs. `earn`
 ggplot(heights_df, aes(x=height, y=earn)) + geom_point(colour = "red", size = 1)
+ggsave("geom_poin height vs earn.png")
 ## `age` vs. `earn`
 ggplot(heights_df, aes(x=age, y=earn)) + geom_point(colour = "blue", size = 1)
+ggsave("geom_poin age vs earn.png")
 ## `ed` vs. `earn`
 ggplot(heights_df, aes(x=ed, y=earn)) + geom_point(colour = "blue", size = 1)
-
+ggsave("geom_poin ed vs earn.png")
 ## Re-create the three scatterplots and add a regression trend line using
 ## the `geom_smooth()` function
 ## `height` vs. `earn`
 ggplot(heights_df, aes(x=height, y=earn)) + geom_point(colour = "blue", size = 1) + geom_smooth()
+ggsave("geom_poin and geom_smooth height vs earn.png")
 ## `age` vs. `earn`
 ggplot(heights_df, aes(x=age, y=earn)) + geom_point(colour = "blue", size = 1)+ geom_smooth()
+ggsave("geom_poin and geom_smooth age vs earn.png")
 ## `ed` vs. `earn`
 ggplot(heights_df, aes(x=ed, y=earn)) + geom_point(colour = "blue", size = 1)+ geom_smooth()
+ggsave("geom_poin and geom_smooth ed vs earn.png")
 
 ## Create a scatterplot of `height`` vs. `earn`.  Use `sex` as the `col` (color) attribute
 ggplot(heights_df, aes(x=height, y=earn, col=sex)) +geom_point(aes(colour = sex))
-
+ggsave("scatterplot height vs earn.png")
 ## Using `ggtitle()`, `xlab()`, and `ylab()` to add a title, x label, and y label to the previous plot
 ## Title: Height vs. Earnings
 ## X label: Height (Inches)
 ## Y Label: Earnings (Dollars)
 ggplot(heights_df, aes(x=height, y=earn, col=sex)) + geom_point(aes(colour = sex)) + xlab("Height (Inches)") +
     ylab("Earnings (Dollars)") + ggtitle("Height vs. Earnings")
-#+ ___ + ___ + ___ + ___
 
 # https://ggplot2.tidyverse.org/reference/geom_histogram.html
 ## Create a histogram of the `earn` variable using `geom_histogram()`
